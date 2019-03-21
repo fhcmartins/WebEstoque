@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ClassificationsTableSeeder extends Seeder
+class ProvidersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,11 @@ class ClassificationsTableSeeder extends Seeder
      */
     public function run()
     {
-        //colocar uma instrução para que registros sejam inseridos na tabela.
         for ($i=1; $i <= 20 ; $i++) {
             $faker = Faker\Factory::create();
 
-            DB::table('classifications')->insert([
-                    'descricao' => $faker->text(30),
+            DB::table('providers')->insert([
+                    'nome' => $faker->company(),
                     'created_at' => \Carbon\Carbon::now()
             ]);
         }
